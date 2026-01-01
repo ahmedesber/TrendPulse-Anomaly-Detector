@@ -1,3 +1,6 @@
+
+---
+
 # Project 4: TrendPulse - Price Anomaly Detector
 
 ## 🎯 Project Overview
@@ -40,20 +43,36 @@ Instead of simple aggregations like mean or max, I utilized the **Isolation Fore
 
 ### Prerequisites
 
-* **Python:** `beautifulsoup4`, `pandas`, `scikit-learn`, `requests`.
-* **Node.js:** `react-plotly.js`, `plotly.js`.
+* **Python 3.x:** `beautifulsoup4`, `pandas`, `scikit-learn`, `requests`.
+* **Node.js & npm:** Required for the React dashboard.
 
 ### Running the Project
 
-1. **Backend:** Run `python3 analysis.py`. This generates `processed_books.json`.
-2. **Frontend Setup:** Ensure `processed_books.json` is located in `frontend/src/`.
-3. **Launch:** Navigate to the `frontend` directory and run:
+> **🚀 Note for Graders:**
+> A pre-processed `processed_books.json` is already included in `frontend/src/`. You can skip the Python steps and run the **Frontend Launch** immediately to view the results.
+
+1. **Backend Analysis (Optional):**
+To refresh the data from the live web source:
 ```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the scraper and ML model
+python3 analysis.py
+
+```
+
+
+*Note: This generates a new `processed_books.json`. Ensure it is moved to `frontend/src/` if updated.*
+2. **Frontend Launch:**
+```bash
+cd frontend
+npm install
 npm run dev
 
 ```
 
 
-4. **View:** Open `http://localhost:5173/` to view the interactive anomaly detection chart.
+3. **View:** Open `http://localhost:5173/` to view the interactive anomaly detection chart.
 
 ---
